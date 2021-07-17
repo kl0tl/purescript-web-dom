@@ -1,6 +1,6 @@
 "use strict";
 
-exports.target = function (pi) {
+export var target = function (pi) {
   return function () {
     return pi.target;
   };

@@ -1,18 +1,18 @@
 "use strict";
 
-exports.length = function (list) {
+export var length = function (list) {
   return function () {
     return list.length;
   };
 };
 
-exports.toArray = function (list) {
+export var toArray = function (list) {
   return function () {
     return [].slice.call(list);
   };
 };
 
-exports._item = function (index) {
+export var _item = function (index) {
   return function (list) {
     return function () {
       return list.item(index);
@@ -20,7 +20,7 @@ exports._item = function (index) {
   };
 };
 
-exports._namedItem = function (name) {
+export var _namedItem = function (name) {
   return function (list) {
     return function () {
       return list.namedItem(name);

@@ -8,15 +8,15 @@ var getEffProp = function (name) {
   };
 };
 
-exports.children = getEffProp("children");
+export var children = getEffProp("children");
 
-exports._firstElementChild = getEffProp("firstElementChild");
+export var _firstElementChild = getEffProp("firstElementChild");
 
-exports._lastElementChild = getEffProp("lastElementChild");
+export var _lastElementChild = getEffProp("lastElementChild");
 
-exports.childElementCount = getEffProp("childElementCount");
+export var childElementCount = getEffProp("childElementCount");
 
-exports._querySelector = function (selector) {
+export var _querySelector = function (selector) {
   return function (node) {
     return function () {
       return node.querySelector(selector);
@@ -24,7 +24,7 @@ exports._querySelector = function (selector) {
   };
 };
 
-exports.querySelectorAll = function (selector) {
+export var querySelectorAll = function (selector) {
   return function (node) {
     return function () {
       return node.querySelectorAll(selector);

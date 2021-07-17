@@ -8,41 +8,41 @@ var getEffProp = function (name) {
   };
 };
 
-exports.nodeTypeIndex = function (node) {
+export var nodeTypeIndex = function (node) {
   return node.nodeType;
 };
 
-exports.nodeName = function (node) {
+export var nodeName = function (node) {
   return node.nodeName;
 };
 
-exports.baseURI = getEffProp("baseURI");
+export var baseURI = getEffProp("baseURI");
 
-exports._ownerDocument = getEffProp("ownerDocument");
+export var _ownerDocument = getEffProp("ownerDocument");
 
-exports._parentNode = getEffProp("parentNode");
+export var _parentNode = getEffProp("parentNode");
 
-exports._parentElement = getEffProp("parentElement");
+export var _parentElement = getEffProp("parentElement");
 
-exports.hasChildNodes = function (node) {
+export var hasChildNodes = function (node) {
   return function () {
     return node.hasChildNodes();
   };
 };
 
-exports.childNodes = getEffProp("childNodes");
+export var childNodes = getEffProp("childNodes");
 
-exports._firstChild = getEffProp("firstChild");
+export var _firstChild = getEffProp("firstChild");
 
-exports._lastChild = getEffProp("lastChild");
+export var _lastChild = getEffProp("lastChild");
 
-exports._previousSibling = getEffProp("previousSibling");
+export var _previousSibling = getEffProp("previousSibling");
 
-exports._nextSibling = getEffProp("nextSibling");
+export var _nextSibling = getEffProp("nextSibling");
 
-exports._nodeValue = getEffProp("nodeValue");
+export var _nodeValue = getEffProp("nodeValue");
 
-exports.setNodeValue = function (value) {
+export var setNodeValue = function (value) {
   return function (node) {
     return function () {
       node.nodeValue = value;
@@ -50,9 +50,9 @@ exports.setNodeValue = function (value) {
   };
 };
 
-exports.textContent = getEffProp("textContent");
+export var textContent = getEffProp("textContent");
 
-exports.setTextContent = function (value) {
+export var setTextContent = function (value) {
   return function (node) {
     return function () {
       node.textContent = value;
@@ -60,25 +60,25 @@ exports.setTextContent = function (value) {
   };
 };
 
-exports.normalize = function (node) {
+export var normalize = function (node) {
   return function () {
     node.normalize();
   };
 };
 
-exports.clone = function (node) {
+export var clone = function (node) {
   return function () {
     return node.cloneNode(false);
   };
 };
 
-exports.deepClone = function (node) {
+export var deepClone = function (node) {
   return function () {
     return node.cloneNode(true);
   };
 };
 
-exports.isEqualNode = function (node1) {
+export var isEqualNode = function (node1) {
   return function (node2) {
     return function () {
       return node1.isEqualNode(node2);
@@ -86,7 +86,7 @@ exports.isEqualNode = function (node1) {
   };
 };
 
-exports.compareDocumentPositionBits = function (node1) {
+export var compareDocumentPositionBits = function (node1) {
   return function (node2) {
     return function () {
       return node1.compareDocumentPosition(node2);
@@ -94,7 +94,7 @@ exports.compareDocumentPositionBits = function (node1) {
   };
 };
 
-exports.contains = function (node1) {
+export var contains = function (node1) {
   return function (node2) {
     return function () {
       return node1.contains(node2);
@@ -102,7 +102,7 @@ exports.contains = function (node1) {
   };
 };
 
-exports._lookupPrefix = function (prefix) {
+export var _lookupPrefix = function (prefix) {
   return function (node) {
     return function () {
       return node.lookupPrefix(prefix);
@@ -110,7 +110,7 @@ exports._lookupPrefix = function (prefix) {
   };
 };
 
-exports._lookupNamespaceURI = function (ns) {
+export var _lookupNamespaceURI = function (ns) {
   return function (node) {
     return function () {
       return node.lookupNamespaceURI(ns);
@@ -118,7 +118,7 @@ exports._lookupNamespaceURI = function (ns) {
   };
 };
 
-exports.isDefaultNamespace = function (ns) {
+export var isDefaultNamespace = function (ns) {
   return function (node) {
     return function () {
       return node.isDefaultNamespace(ns);
@@ -126,7 +126,7 @@ exports.isDefaultNamespace = function (ns) {
   };
 };
 
-exports.insertBefore = function (node1) {
+export var insertBefore = function (node1) {
   return function (node2) {
     return function (parent) {
       return function () {
@@ -136,7 +136,7 @@ exports.insertBefore = function (node1) {
   };
 };
 
-exports.appendChild = function (node) {
+export var appendChild = function (node) {
   return function (parent) {
     return function () {
       parent.appendChild(node);
@@ -144,7 +144,7 @@ exports.appendChild = function (node) {
   };
 };
 
-exports.replaceChild = function (newChild) {
+export var replaceChild = function (newChild) {
   return function (oldChild) {
     return function (parent) {
       return function () {
@@ -154,7 +154,7 @@ exports.replaceChild = function (newChild) {
   };
 };
 
-exports.removeChild = function (node) {
+export var removeChild = function (node) {
   return function (parent) {
     return function () {
       parent.removeChild(node);

@@ -1,18 +1,18 @@
 "use strict";
 
-exports.data_ = function (t) {
+export var data_ = function (t) {
   return function () {
     return t.data;
   };
 };
 
-exports.length = function (t) {
+export var length = function (t) {
   return function () {
     return t.length;
   };
 };
 
-exports.substringData = function (offset) {
+export var substringData = function (offset) {
   return function (count) {
     return function (cd) {
       return function () {
@@ -22,7 +22,7 @@ exports.substringData = function (offset) {
   };
 };
 
-exports.appendData = function (data) {
+export var appendData = function (data) {
   return function (cd) {
     return function () {
       cd.appendData(data);
@@ -30,7 +30,7 @@ exports.appendData = function (data) {
   };
 };
 
-exports.insertData = function (offset) {
+export var insertData = function (offset) {
   return function (data) {
     return function (cd) {
       return function () {
@@ -40,7 +40,7 @@ exports.insertData = function (offset) {
   };
 };
 
-exports.deleteData = function (offset) {
+export var deleteData = function (offset) {
   return function (count) {
     return function (cd) {
       return function () {
@@ -50,7 +50,7 @@ exports.deleteData = function (offset) {
   };
 };
 
-exports.replaceData = function (offset) {
+export var replaceData = function (offset) {
   return function (count) {
     return function (data) {
       return function (cd) {

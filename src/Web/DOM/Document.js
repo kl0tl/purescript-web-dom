@@ -8,17 +8,17 @@ var getEffProp = function (name) {
   };
 };
 
-exports.url = getEffProp("URL");
-exports.documentURI = getEffProp("documentURI");
-exports.origin = getEffProp("origin");
-exports.compatMode = getEffProp("compatMode");
-exports.characterSet = getEffProp("characterSet");
-exports.contentType = getEffProp("contentType");
+export var url = getEffProp("URL");
+export var documentURI = getEffProp("documentURI");
+export var origin = getEffProp("origin");
+export var compatMode = getEffProp("compatMode");
+export var characterSet = getEffProp("characterSet");
+export var contentType = getEffProp("contentType");
 
-exports._doctype = getEffProp("doctype");
-exports._documentElement = getEffProp("documentElement");
+export var _doctype = getEffProp("doctype");
+export var _documentElement = getEffProp("documentElement");
 
-exports.getElementsByTagName = function (localName) {
+export var getElementsByTagName = function (localName) {
   return function (doc) {
     return function () {
       return doc.getElementsByTagName(localName);
@@ -26,7 +26,7 @@ exports.getElementsByTagName = function (localName) {
   };
 };
 
-exports._getElementsByTagNameNS = function (ns) {
+export var _getElementsByTagNameNS = function (ns) {
   return function (localName) {
     return function (doc) {
       return function () {
@@ -36,7 +36,7 @@ exports._getElementsByTagNameNS = function (ns) {
   };
 };
 
-exports.getElementsByClassName = function (classNames) {
+export var getElementsByClassName = function (classNames) {
   return function (doc) {
     return function () {
       return doc.getElementsByClassName(classNames);
@@ -44,7 +44,7 @@ exports.getElementsByClassName = function (classNames) {
   };
 };
 
-exports.createElement = function (localName) {
+export var createElement = function (localName) {
   return function (doc) {
     return function () {
       return doc.createElement(localName);
@@ -52,7 +52,7 @@ exports.createElement = function (localName) {
   };
 };
 
-exports._createElementNS = function (ns) {
+export var _createElementNS = function (ns) {
   return function (qualifiedName) {
     return function (doc) {
       return function () {
@@ -62,13 +62,13 @@ exports._createElementNS = function (ns) {
   };
 };
 
-exports.createDocumentFragment = function (doc) {
+export var createDocumentFragment = function (doc) {
   return function () {
     return doc.createDocumentFragment();
   };
 };
 
-exports.createTextNode = function (data) {
+export var createTextNode = function (data) {
   return function (doc) {
     return function () {
       return doc.createTextNode(data);
@@ -76,7 +76,7 @@ exports.createTextNode = function (data) {
   };
 };
 
-exports.createComment = function (data) {
+export var createComment = function (data) {
   return function (doc) {
     return function () {
       return doc.createComment(data);
@@ -84,7 +84,7 @@ exports.createComment = function (data) {
   };
 };
 
-exports.createProcessingInstruction = function (target) {
+export var createProcessingInstruction = function (target) {
   return function (data) {
     return function (doc) {
       return function () {
@@ -94,7 +94,7 @@ exports.createProcessingInstruction = function (target) {
   };
 };
 
-exports.importNode = function (node) {
+export var importNode = function (node) {
   return function (deep) {
     return function (doc) {
       return function () {
@@ -104,7 +104,7 @@ exports.importNode = function (node) {
   };
 };
 
-exports.adoptNode = function (node) {
+export var adoptNode = function (node) {
   return function (doc) {
     return function () {
       return doc.adoptNode(node);

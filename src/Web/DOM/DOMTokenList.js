@@ -1,6 +1,6 @@
 "use strict";
 
-exports.add = function(list) {
+export var add = function(list) {
   return function(token) {
     return function() {
       return list.add(token);
@@ -8,7 +8,7 @@ exports.add = function(list) {
   };
 };
 
-exports.remove = function(list) {
+export var remove = function(list) {
   return function(token) {
     return function() {
       return list.remove(token);
@@ -16,7 +16,7 @@ exports.remove = function(list) {
   };
 };
 
-exports.contains = function(list) {
+export var contains = function(list) {
   return function(token) {
     return function() {
       return list.contains(token);
@@ -24,7 +24,7 @@ exports.contains = function(list) {
   };
 };
 
-exports.toggle = function(list) {
+export var toggle = function(list) {
   return function(token) {
     return function() {
       return list.toggle(token);
@@ -32,7 +32,7 @@ exports.toggle = function(list) {
   };
 };
 
-exports.toggleForce = function(list) {
+export var toggleForce = function(list) {
   return function(token) {
     return function(force) {
       return function() {
@@ -42,7 +42,7 @@ exports.toggleForce = function(list) {
   };
 };
 
-exports._item = function(list) {
+export var _item = function(list) {
   return function(index) {
     return function() {
       return list.item(index);

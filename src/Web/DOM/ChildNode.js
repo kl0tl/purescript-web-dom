@@ -1,6 +1,6 @@
 "use strict";
 
-exports.remove = function (node) {
+export var remove = function (node) {
   return function () {
     return node.remove();
   };

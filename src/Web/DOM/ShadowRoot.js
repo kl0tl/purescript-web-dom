@@ -1,10 +1,10 @@
 "use strict";
 
-exports._mode = function (el) {
+export var _mode = function (el) {
   return el.mode;
 };
 
-exports.host = function (el) {
+export var host = function (el) {
   return function() {
     return el.host;
   };
